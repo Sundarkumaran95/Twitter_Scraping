@@ -35,7 +35,7 @@ st.dataframe(df)
        
 
 # storing data in a database    
-if st.button("Upload to data_base"):
+if st.button("Upload_to_database"):
    client = MongoClient("mongodb://localhost:27017")
    data=df.to_dict(orient="records")
    db=client["TwitterScrapping"]
@@ -48,4 +48,4 @@ if st.button("Upload to data_base"):
 
 # saving the scrapped data into json file
    json_file = df.to_json()
-   st.download_button("Download data as json_file",json_file,file_name='Twitterscraped.json')
+   st.download_button("Download data as json",json_file,file_name='Twitterscraped.json')
